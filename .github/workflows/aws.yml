@@ -14,9 +14,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
   
-    - name: "Echo AWS_REGION"
-      run: echo "${{ env.AWS_REGION }}"      
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
