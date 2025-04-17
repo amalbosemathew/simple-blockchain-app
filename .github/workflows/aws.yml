@@ -21,4 +21,12 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         #aws-region: 'us-east-1'
         aws-region: ${{ vars.AWS_REGION }}
+    - name: Deploy to AWS EC2
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "./"
+        target: "/home/ec2-user/sample"        
 
