@@ -1,5 +1,5 @@
 # Use official Golang image
-FROM golang:1.20 
+FROM golang:1.24.4 
 
 # Set environment variables
 WORKDIR /app
